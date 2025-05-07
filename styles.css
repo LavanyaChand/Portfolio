@@ -8,6 +8,9 @@
     
 }
 
+html{
+    scroll-behavior: smooth;
+}
 
 li{
     list-style-type: none;
@@ -54,7 +57,7 @@ button{
 }
 
 section{
-    background-color: rgb(245, 245, 245);
+    background-color: rgb(236, 230, 230);
     transition: all 400ms ease;
 }
 
@@ -87,7 +90,7 @@ input:hover{
 }
 
 input:focus, textarea:focus{
-    border-color:#f06449;
+    border-color:#9B5DE5;
 }
 
 .title{
@@ -98,7 +101,7 @@ input:focus, textarea:focus{
 }
 
 .text--orange{
-    color: #f06449 !important;
+    color: #9B5DE5 !important;
 }
 
 .link__hover-effect{
@@ -226,8 +229,31 @@ nav{
     transform: translate(-50%, -50%);
     width: 100%;
     max-width: 1000px;
+    margin: 0 auto;
     padding: 0 30px;
+    z-index: 1;
 }
+
+.header__row{
+    display: flex;
+}
+
+.header__content{
+    width: 60%;
+}
+
+.header__picture{
+    width: 40%;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+}
+
+.header__picture--img{
+    width: 100%;
+}
+
 
 .header__para{
     font-size: 18px;
@@ -241,7 +267,7 @@ nav{
 }
 
 .social__link{
-    background-color: #f06449;
+    background-color: #9B5DE5;
     color: white;
     padding: 6px;
     width: 32px;
@@ -263,6 +289,7 @@ nav{
     background-color: #242424;
     color: white;
     position: fixed;
+    z-index: 100;
     bottom: 32px;
     right: 40px;
     box-shadow: 0 12px 30px 0 rgb(0, 0, 0, 0.28);
@@ -411,8 +438,8 @@ nav{
 }
 
 .form__submit{
-    background-color: #f06449;
-    border: 2px solid #f06449;
+    background-color: #9B5DE5;
+    border: 2px solid #9B5DE5;
     color: white;
     font-weight: 700;
     width: 100%;
@@ -428,8 +455,8 @@ nav{
 }
 
 .form__submit:active{
-    border-color: #f06449;
-    color: #f06449;
+    border-color: #9B5DE5;
+    color: #9B5DE5;
 }
 
 .modal__overlay{
@@ -573,18 +600,37 @@ footer{
     background-color: #242424;
     display: flex;
     padding: 4% 0%;
+    position: relative;
 }
 
 .footer__row{
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
-.footer__logo{
+.footer__logo--img{
     filter: invert(1);
 }
+
+.footer__anchor {
+    position: relative;
+  }
+
+.footer__logo--popper {
+    position: absolute;
+    right: 0;
+    top: 26px;
+    font-weight: 400;
+    opacity: 0;
+    transition: all 300ms ease;
+    color: white;
+}
+
+.footer__anchor:hover .footer__logo--popper {
+    transform: translateX(90px);
+    opacity: 1;
+  }
 
 .footer__social--list{
     width: 100%;
@@ -597,4 +643,146 @@ footer{
 
 .footer__social--link, .footer__copyright{
     color: white;
+}
+
+/* SHAPES 
+
+  shapes on the first row 
+  height = 15vh
+  
+  shapes on the second row 
+  height = 50vh
+  
+  shapes on the third row 
+  height = 80vh
+
+  shapes on the first column
+  width = 5vw
+  
+  shapes on the second column
+  width = 50vw
+
+  shapes on the third column
+  width = 80vw
+
+*/
+
+.shape {
+    position: fixed;
+    z-index: 0;
+    pointer-events: none;
+}
+  
+.shape--0 {
+    top: 20vh;
+    left: 5vw;
+}
+
+.shape--1 {
+    top: 20vh;
+    left: 50vw;
+}
+  
+.shape--2 {
+    top: 20vh;
+    left: 80vw;
+  }
+
+.shape--3 {
+    top: 50vh;
+    left: 5vw;
+}
+
+.shape--4 {
+    top: 50vh;
+    left: 50vw;
+}
+
+.shape--5 {
+    top: 50vh;
+    left: 80vw;
+}
+  
+.shape--6 {
+    top: 76vh;
+    left: 5vw;
+}
+  
+.shape--7 {
+    top: 76vh;
+    left: 50vw;
+}
+  
+.shape--8 {
+    top: 76vh;
+    left: 80vw;
+}
+
+
+/*Small phones, tables, large smartphones */
+@media (max-width: 768px){
+
+    .title{
+        font-size: 60px;
+    }
+
+    .header__para{
+        font-size: 18px;
+    }
+
+    .modal{
+        top: 0;
+        left: 0;
+        transform: none;
+        height: auto;
+        width: 100%;
+        flex-direction: column-reverse;
+        border-radius: 0;
+    }
+
+    .modal__half{
+        width: 100%;
+    }
+
+}
+
+
+/*Small phones*/
+
+@media (max-width: 480px){
+
+    .title{
+        font-size: 46px;
+    }
+
+    .header__para{
+        font-size: 16px;
+    }
+
+    .shape{
+        display: none;
+    }
+
+    .nav__link:first-child{
+        display: none;
+    }
+
+    .project__description--para{
+        display: none;
+    }
+
+    .project__description{
+        left: 0;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .project__description--sub-title{
+        margin-bottom: 8px;
+    }
+
+    .modal__half{
+        padding: 40px;
+    }
 }

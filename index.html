@@ -23,13 +23,13 @@
     </script>
   </head>
   <body>
-    <section id="landing-page">
+    <section id="landing-page" onmousemove="moveBackground(event)">
       <nav>
         <figure>
           <img id="#personal-logo" class="nav__logo" src="./assets/LC_logo_bold.svg" alt="" />
         </figure>
         <ul class="nav__link--list">
-          <li class="nav__link">
+          <li class="nav__link" onclick="toggleModal()">
             <a
               href="#"
               class="nav__link--anchor link__hover-effect link__hover-effect--black"
@@ -64,16 +64,12 @@
         </ul>
       </nav>
 
-      <header class="header">
+      <header class="header header__row">
         <div class="header__content">
-          <h1 class="title">Hey</h1>
+          <h1 class="title">Hey,</h1>
           <h1 class="title text--orange">I'm Lavanya.</h1>
           <p class="header__para">
-            I'm an aspiring
-            <strong class="text--orange">Frontend Software Engineer</strong>
-            with a passion for creating responsive, user-friendly web
-            applications. I enjoy writing clean, efficient code and am eager to
-            contribute to impactful projects.
+            An aspiring  <strong class="text--orange"> Frontend Software Engineer</Frontend></strong> focused on responsive, user-friendly web apps and writing clean, efficient code for impactful projects.
             <br>
             Here's a bit more <strong class="text--orange click" onclick="toggleModal()">about me.</strong>
           </p>
@@ -101,10 +97,15 @@
             </a>
           </div>
         </div>
+        <figure class="header__picture">
+            <img src="./assets/undraw_programmer_raqr (1).svg" class="header__picture--img" alt="">
+        </figure>
       </header>
-      <button class="mail__btn click" onclick="toggleModal()">
-        <i class="fa-solid fa-envelope"></i>
-      </button>
+      <a href="#">
+          <button class="mail__btn click" onclick="toggleModal()">
+            <i class="fa-solid fa-envelope"></i>
+          </button>
+      </a>
       <a href="#projects" class="scroll">
         <div class="scroll__icon click"></div>
       </a>
@@ -128,15 +129,15 @@
                     <span class="language__name">HTML</span>
                 </figure>
                 <figure class="modal__language">
-                    <img class="modal__language--img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png" alt="">
+                    <img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png" alt="">
                     <span class="language__name">CSS</span>
                 </figure>
                 <figure class="modal__language">
-                    <img class="modal__language--img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png" alt="">
+                    <img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png" alt="">
                     <span class="language__name">JavaScript</span>
                 </figure>
                 <figure class="modal__language">
-                    <img class="modal__language--img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png" alt="">
+                    <img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png" alt="">
                     <span class="language__name">React</span>
                 </figure>
             </div>
@@ -174,6 +175,15 @@
             </div>
         </div>
       </div>
+      <img src="./assets/semi circle.svg" class="shape shape--0">
+      <img src="./assets/circle.svg" class="shape shape--1">
+      <img src="./assets/squiggly.svg" class="shape shape--2">
+      <img src="./assets/circle.svg" class="shape shape--3">
+      <img src="./assets/triangle.svg" class="shape shape--4">
+      <img src="./assets/circle.svg" class="shape shape--5">
+      <img src="./assets/squiggly.svg" class="shape shape--6">
+      <img src="./assets/circle.svg" class="shape shape--7">
+      <img src="./assets/semi circle.svg" class="shape shape--8">
     </section>
 
     <section id="projects">
@@ -286,10 +296,16 @@
     <footer>
       <div class="container">
         <div class="row footer__row">
-            <figure>
-              <img src="./assets/LC_logo_bold.svg" class="footer__logo" alt="" />
-            </figure>
-    
+            <a href="#" class="footer__anchor">
+                <figure class="footer__logo">
+                  <img src="./assets/LC_logo_bold.svg" class="footer__logo--img" alt="" />
+                </figure>
+                <span class="footer__logo--popper">
+                    Back to Top
+                    <i class="fa-solid fa-arrow-up"></i>
+                  </span>
+            </a>
+            
             <div class="footer__social--list">
               <a href="https://github.com/LavanyaChand" target="_blank"
                 class="footer__social--link 
