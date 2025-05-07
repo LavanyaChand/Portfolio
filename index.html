@@ -5,16 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="index.js"></script>
     <script
       src="https://kit.fontawesome.com/2dfb5a5ef8.js"
       crossorigin="anonymous"
     ></script>
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "YOUR_PUBLIC_KEY",
+        });
+    })();
+    </script>
   </head>
   <body>
     <section id="landing-page">
       <nav>
         <figure>
-          <img id="#personal-logo" src="./assets/LC_logo_bold.svg" alt="" />
+          <img id="#personal-logo" class="nav__logo" src="./assets/LC_logo_bold.svg" alt="" />
         </figure>
         <ul class="nav__link--list">
           <li class="nav__link">
@@ -33,7 +45,7 @@
               Projects</a
             >
           </li>
-          <li class="nav__link">
+          <li class="nav__link" onclick="toggleModal()">
             <a
               href="#"
               class="nav__link--anchor link__hover-effect link__hover-effect--black"
@@ -41,7 +53,7 @@
               Contact</a
             >
           </li>
-          <li class="nav__link">
+          <li class="nav__link click" onclick="toggleContrast()">
             <a
               href="#"
               class="nav__link--anchor link__hover-effect link__hover-effect--black"
@@ -62,8 +74,8 @@
             with a passion for creating responsive, user-friendly web
             applications. I enjoy writing clean, efficient code and am eager to
             contribute to impactful projects.
-            <br />
-            Here's a bit more <strong class="text--orange">about me.</strong>
+            <br>
+            Here's a bit more <strong class="text--orange click" onclick="toggleModal()">about me.</strong>
           </p>
           <div class="social__list">
             <a
@@ -90,7 +102,7 @@
           </div>
         </div>
       </header>
-      <button class="mail__btn click">
+      <button class="mail__btn click" onclick="toggleModal()">
         <i class="fa-solid fa-envelope"></i>
       </button>
       <a href="#projects" class="scroll">
@@ -106,9 +118,9 @@
                 Frontend Software Engineer.
             </h4>
             <p class="modal__para">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, corporis.
+                I’m an aspiring <b class="text--orange">Frontend Software Engineer</b> passionate about building responsive, user-friendly web applications. 
                 <br>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid quae fuga, consectetur pariatur at iusto architecto quod sequi recusandae eos?
+                I specialize in writing clean, scalable code with <b class="text--orange">HTML, CSS, JavaScript,</b> and <b class="text--orange">React.</b> I enjoy solving challenges, creating intuitive interfaces, and contributing to impactful projects that make a real difference.
             </p>
             <div class="modal__languages">
                 <figure class="modal__language">
@@ -129,7 +141,38 @@
                 </figure>
             </div>
         </div>
-        <div class="modal__half modal__contact">Let's connect!</div>
+        <div class="modal__half modal__contact">
+            <i class="fa-solid fa-xmark modal__exit click" onclick="toggleModal()"></i>
+            <h3 class="modal__title modal__title--contact">
+                Let's Connect!
+            </h3>
+            <h3 class="modal__sub-title modal__sub-title--contact">
+                I'm currently open to new opportunities.
+            </h3>
+            <form onsubmit="contact(event)" id="contact__form">
+                <div class="form__item">
+                    <label class="form__item--label">Name</label>
+                    <input type="text" class="input" name="user_name" required></input>
+                </div>
+                <div class="form__item">
+                    <label class="form__item--label">Email</label>
+                    <input type="email" class="input" name="user_email" required></input>
+                </div>
+                <div class="form__item">
+                    <label class="form__item--label">Message</label>
+                    <textarea type="text" class="input" name="message" required></textarea>
+                </div>
+                <button id="contact__submit" class="form__submit">
+                    Send message
+                </button>
+            </form>
+            <div class="modal__overlay modal__overlay--loading">
+                <i class="fa-solid fa-spinner"></i>
+            </div>
+            <div class="modal__overlay modal__overlay--success">
+                Thanks for the message! Looking forward to connecting with you soon!.
+            </div>
+        </div>
       </div>
     </section>
 
