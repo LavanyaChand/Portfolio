@@ -55,11 +55,16 @@ function toggleModal(){
 
 function toggleContrast(){
     contrastToggle = !contrastToggle;
+    const icon = document.getElementById("theme-icon");
+
     if(contrastToggle){
         document.body.classList += " dark-theme";
+        icon.classList.remove("fa-moon");
+        icon.classList.add("fa-sun"); // change to sun when dark mode
     }
-
     else{
         document.body.classList.remove("dark-theme");
+        icon.classList.remove("fa-sun");
+        icon.classList.add("fa-moon"); // back to half moon when light mode
     }
 }
